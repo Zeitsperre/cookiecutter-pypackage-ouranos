@@ -1,6 +1,6 @@
-=============================
+================================
 {{ cookiecutter.project_name }}
-=============================
+================================
 
 .. image:: https://badge.fury.io/py/{{ cookiecutter.repo_name }}.png
     :target: http://badge.fury.io/py/{{ cookiecutter.repo_name }}

@@ -4,11 +4,13 @@ cookiecutter-pypackage
 
 Cookiecutter template for a Python package. See https://github.com/audreyr/cookiecutter.
 
-* Free software: BSD license
+* Free software: Apache2 license
 * Pytest_ runner: Supports `unittest`, `pytest`, `nose` style tests and more
 * Travis-CI_: Ready for Travis Continuous integration testing
-* Tox_ testing: Setup to easily test for python 2.6, 2.7, 3.3 and PyPy_
-* Sphinx_ docs: Documentation raedy for generation with, for example, ReadTheDocs_
+* Tox_ testing: Setup to easily test for python 3.5, 3.6, 3.7 and PyPy_
+* Black_ formatting: Adherance to a PEP8-esque code formatting standard
+* Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
+* Pre-commit_ hooks: Automate code compliance for easy contributor development
 * Wheel_ support: Use the newest python package distribution standard from the get go
 
 Usage
@@ -51,12 +53,13 @@ Or Submit a Pull Request
 I also accept pull requests on this, if they're small, atomic, and if they
 make my own packaging experience better.
 
-
 .. _Travis-CI: http://travis-ci.org/
 .. _Tox: http://testrun.org/tox/
+.. _Black: https://black.readthedocs.io/en/stable/
 .. _Sphinx: http://sphinx-doc.org/
 .. _ReadTheDocs: https://readthedocs.org/
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/Nekroze/cookiecutter-pypackage
 .. _Pytest: http://pytest.org/
 .. _PyPy: http://pypy.org/
+.. _Pre-commit: https://pre-commit.com/
 .. _Wheel: http://pythonwheels.com
