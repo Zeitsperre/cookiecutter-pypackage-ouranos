@@ -10,8 +10,9 @@ help:
 	@echo "docs - generate Sphinx HTML documentation, including API docs"
 	@echo "release - package and upload a release"
 	@echo "sdist - package"
+	@echo "install - install the library in developmer mode"
 
-clean: clean-build clean-pyc
+clean: clean-build clean-pyc  ## remove all build, test, coverage and Python artifacts
 
 clean-build:
 	rm -fr build/
@@ -54,3 +55,6 @@ sdist: clean
 	python setup.py sdist
 	python setup.py bdist_wheel upload
 	ls -l dist
+
+install: clean ## install the package to the active Python's site-packages
+	pip install -e .
