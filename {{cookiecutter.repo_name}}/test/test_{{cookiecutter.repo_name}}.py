@@ -4,12 +4,12 @@ Tests for `{{ cookiecutter.repo_name }}` module.
 import pytest
 import {{ cookiecutter.repo_name }}
 
-from {{ cookiecutter.repo_name }} import {{ cookiecutter.repo_name }}
+from {{ cookiecutter.repo_name }} import __version__
 
 class Test{{ cookiecutter.repo_name|capitalize }}Version(object):
 
     def test_version(self):
-        assert {{ cookiecutter.repo_name }}.__version__
+        assert __version__
 
 class Test{{ cookiecutter.repo_name|capitalize }}(object):
 

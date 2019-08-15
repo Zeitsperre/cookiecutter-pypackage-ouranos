@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 NAME = '{{ cookiecutter.repo_name }}'
 VERSION = '{{ cookiecutter.version }}'
 DESCRIPTION = '{{ cookiecutter.project_short_description }}'
-KEYWORDS = '{{ ccookiecutter.project_keywords }}'
+KEYWORDS = '{{ cookiecutter.project_keywords }}'
 URL = 'https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}'
 AUTHOR = '{{ cookiecutter.full_name }}'
 AUTHOR_EMAIL = '{{ cookiecutter.email }}'
