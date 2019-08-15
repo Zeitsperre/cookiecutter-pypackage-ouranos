@@ -2,16 +2,33 @@
 
 import os
 import sys
+from setuptools import setup, find_packages
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
-
+NAME = '{{ cookiecutter.repo_name }}'
+VERSION = '{{ cookiecutter.version }}'
+DESCRIPTION = '{{ cookiecutter.project_short_description }}'
+KEYWORDS = '{{ cookiecutter.project_keywords }}'
+URL = 'https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}'
+AUTHOR = '{{ cookiecutter.full_name }}'
+AUTHOR_EMAIL = '{{ cookiecutter.email }}'
+REQUIRES_PYTHON = ">=3.5.0"
+LICENSE = "Apache Software License 2.0"
 
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
+
+requirements = list()
+with open("requirements.txt") as req:
+    for dependency in req.readlines():
+        requirements.append(dependency)
+
+dev_requirements = []
+with open("requirements_dev.txt") as dev:
+    for dependency in dev.readlines():
+        dev_requirements.append(dependency)
+
+docs_requirements = ["sphinx", "guzzle-sphinx-theme", "nbsphinx", "pandoc", "ipython"]
 
 readme = open('README.rst').read()
 doclink = """
@@ -22,33 +39,30 @@ The full documentation is at http://{{ cookiecutter.repo_name }}.rtfd.org."""
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
-    name='{{ cookiecutter.repo_name }}',
-    version='{{ cookiecutter.version }}',
-    description='{{ cookiecutter.project_short_description }}',
+    name=NAME,
+    version=VERSION,
+    description=DESCRIPTION,
     long_description=readme + '\n\n' + doclink + '\n\n' + history,
-    author='{{ cookiecutter.full_name }}',
-    author_email='{{ cookiecutter.email }}',
-    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
-    packages=[
-        '{{ cookiecutter.repo_name }}',
-    ],
+    author=AUTHOR,
+    author_email=AUTHOR,
+    url=URL,
+    packages=find_packages(),
     package_dir={'{{ cookiecutter.repo_name }}': '{{ cookiecutter.repo_name }}'},
     include_package_data=True,
-    install_requires=[
-    ],
+    install_requires=requirements,
+    extras_require={"docs": docs_requirements, "dev": dev_requirements},
     license='MIT',
     zip_safe=False,
-    keywords='{{ cookiecutter.repo_name }}',
+    keywords='{{ cookiecutter.project_keywords }}',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: Implementation :: PyPy',
     ],
 )

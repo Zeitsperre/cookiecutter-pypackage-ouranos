@@ -2,9 +2,8 @@
 Installation
 ============
 
-At the command line either via easy_install or pip::
+At the command line either via pip::
 
-    $ easy_install {{ cookiecutter.repo_name }}
     $ pip install {{ cookiecutter.repo_name }}
 
 Or, if you have virtualenvwrapper installed::

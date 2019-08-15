@@ -3,15 +3,17 @@
 help:
 	@echo "clean-build - remove build artifacts"
 	@echo "clean-pyc - remove Python file artifacts"
-	@echo "lint - check style with flake8"
+	@echo "compliant - make changes to code to satisfy lint rules"
+	@echo "lint - check style with modfied pep8 and black"
 	@echo "test - run tests quickly with the default Python"
 	@echo "test-all - run tests on every Python version with tox"
 	@echo "coverage - check code coverage quickly with the default Python"
 	@echo "docs - generate Sphinx HTML documentation, including API docs"
 	@echo "release - package and upload a release"
 	@echo "sdist - package"
+	@echo "install - install the library in developmer mode"
 
-clean: clean-build clean-pyc
+clean: clean-build clean-pyc  ## remove all build, test, coverage and Python artifacts
 
 clean-build:
 	rm -fr build/
@@ -23,11 +25,16 @@ clean-pyc:
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 
+compliant:
+	auotopep8 {{ cookiecutter.repo_name }} test
+	black {{ cookiecutter.repo_name }} test
+
 lint:
 	flake8 {{ cookiecutter.repo_name }} test
+	black {{ cookiecutter.repo_name }} test --check
 
 test:
-	py.test
+	pytest test
 
 test-all:
 	tox
@@ -54,3 +61,6 @@ sdist: clean
 	python setup.py sdist
 	python setup.py bdist_wheel upload
 	ls -l dist
+
+install: clean ## install the package to the active Python's site-packages
+	pip install -e .
