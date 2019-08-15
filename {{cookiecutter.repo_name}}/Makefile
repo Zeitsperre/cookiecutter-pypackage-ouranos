@@ -3,7 +3,8 @@
 help:
 	@echo "clean-build - remove build artifacts"
 	@echo "clean-pyc - remove Python file artifacts"
-	@echo "lint - check style with black"
+	@echo "compliant - make changes to code to satisfy lint rules"
+	@echo "lint - check style with modfied pep8 and black"
 	@echo "test - run tests quickly with the default Python"
 	@echo "test-all - run tests on every Python version with tox"
 	@echo "coverage - check code coverage quickly with the default Python"
@@ -24,8 +25,13 @@ clean-pyc:
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 
-lint:
+compliant:
+	auotopep8 {{ cookiecutter.repo_name }} test
 	black {{ cookiecutter.repo_name }} test
+
+lint:
+	flake8 {{ cookiecutter.repo_name }} test
+	black {{ cookiecutter.repo_name }} test --check
 
 test:
 	pytest test
