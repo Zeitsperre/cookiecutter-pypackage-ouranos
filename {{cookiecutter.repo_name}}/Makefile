@@ -28,7 +28,7 @@ lint:
 	black {{ cookiecutter.repo_name }} test
 
 test:
-	pytest
+	pytest test
 
 test-all:
 	tox
