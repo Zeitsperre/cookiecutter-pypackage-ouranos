@@ -1,10 +1,10 @@
-======================
-cookiecutter-pypackage
-======================
+==============================
+cookiecutter-pypackage-ouranos
+==============================
 
-Cookiecutter template for a Python package. See https://github.com/audreyr/cookiecutter.
+Cookiecutter template (Ouranos recipe) for a Python package. See https://github.com/audreyr/cookiecutter.
 
-* Free software: Apache2 license
+* Free software: Apache2_ license
 * Pytest_ runner: Supports `unittest`, `pytest`, `nose` style tests and more
 * Travis-CI_: Ready for Travis Continuous integration testing
 * Tox_ testing: Setup to easily test for python 3.5, 3.6, 3.7 and PyPy_
@@ -53,6 +53,7 @@ Or Submit a Pull Request
 I also accept pull requests on this, if they're small, atomic, and if they
 make my own packaging experience better.
 
+.. _Apache2: https://www.apache.org/licenses/LICENSE-2.0.html
 .. _Travis-CI: http://travis-ci.org/
 .. _Tox: http://testrun.org/tox/
 .. _Black: https://black.readthedocs.io/en/stable/
