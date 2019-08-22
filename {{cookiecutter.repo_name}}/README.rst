@@ -4,7 +4,7 @@
 
 |build| |coveralls| |codefactor| |black|
 
-{{ cookiecutter.project_short_description}}
+{{ cookiecutter.project_short_description }}
 
 * Documentation: |docs|
 * Free Software: |license|
@@ -13,6 +13,8 @@ Features
 --------
 
 * TODO
+
+.. include:: HISTORY.rst
 
 
 .. |build| image:: https://img.shields.io/travis/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.svg?branch=master
