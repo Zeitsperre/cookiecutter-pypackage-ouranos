@@ -14,9 +14,6 @@ Features
 
 * TODO
 
-.. include:: HISTORY.rst
-
-
 .. |build| image:: https://img.shields.io/travis/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.svg?branch=master
         :target: https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
         :alt: Build Status
@@ -38,5 +35,5 @@ Features
         :alt: License
 
 .. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
-        :target: https://github.com/python/black
+        :target: https://github.com/psf/black
         :alt: Python Black
