@@ -86,7 +86,7 @@ exclude_patterns = [
     "_build",
     "Thumbs.db",
     ".DS_Store",
-    "notebooks/xclim_training",
+    "notebooks",
     "**.ipynb_checkpoints",
 ]
 
