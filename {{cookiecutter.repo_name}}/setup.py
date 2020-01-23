@@ -28,7 +28,7 @@ with open("requirements_dev.txt") as dev:
     for dependency in dev.readlines():
         dev_requirements.append(dependency)
 
-docs_requirements = ["sphinx", "guzzle-sphinx-theme", "nbsphinx", "pandoc", "ipython"]
+docs_requirements = ["sphinx", "nbsphinx", "pandoc", "ipython"]
 
 readme = open('README.rst').read()
 doclink = """
@@ -51,7 +51,7 @@ setup(
     include_package_data=True,
     install_requires=requirements,
     extras_require={"docs": docs_requirements, "dev": dev_requirements},
-    license='MIT',
+    license='Apache-2.0',
     zip_safe=False,
     keywords='{{ cookiecutter.project_keywords }}',
     classifiers=[
@@ -63,6 +63,5 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: Implementation :: PyPy',
     ],
 )
