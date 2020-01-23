@@ -2,4 +2,4 @@ tox-travis
 pytest
 pytest-runner
 flake8
-autopep8
+black
