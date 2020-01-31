@@ -22,7 +22,7 @@ Features
         :target: https://coveralls.io/github/{{ cookiecutter.github_organization }}/{{ cookiecutter.repo_name }}
         :alt: Coveralls
 
-.. |codefactor| image:: https://www.codefactor.io/repository/github/{{ cookiecutter.github_organzation }}/{{ cookiecutter.repo_name }}/badge
+.. |codefactor| image:: https://www.codefactor.io/repository/github/{{ cookiecutter.github_organization }}/{{ cookiecutter.repo_name }}/badge
         :target: https://www.codefactor.io/repository/github/{{ cookiecutter.github_organization }}/{{ cookiecutter.repo_name }}
         :alt: CodeFactor
 
