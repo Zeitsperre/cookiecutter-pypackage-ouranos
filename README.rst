@@ -1,13 +1,13 @@
-==============================
-cookiecutter-pypackage-ouranos
-==============================
+======================
+cookiecutter-pypackage
+======================
 
-Cookiecutter template (Ouranos recipe) for a Python package. See https://github.com/audreyr/cookiecutter.
+Cookiecutter template for a Python package. See https://github.com/audreyr/cookiecutter.
 
 * Free software: Apache2_ license
 * Pytest_ runner: Supports `unittest`, `pytest`, `nose` style tests and more
 * Travis-CI_: Ready for Travis Continuous integration testing
-* Tox_ testing: Setup to easily test for python 3.5, 3.6, 3.7 and PyPy_
+* Tox_ testing: Setup to easily test for python 3.5, 3.6, 3.7, 3.8, and PyPy_
 * Black_ formatting: Adherance to a PEP8-esque code formatting standard
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
 * Pre-commit_ hooks: Automate code compliance for easy contributor development

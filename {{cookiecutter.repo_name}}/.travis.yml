@@ -1,12 +1,11 @@
 # Config file for automatic testing at travis-ci.org
 language: python
 
-sudo: false
-
 cache:
    directories:
       - $HOME/.cache/pre-commit
 
+os: linux
 dist: xenial
 
 matrix:
@@ -26,8 +25,11 @@ matrix:
         python: 3.7
       - env: TOXENV=hooks
         python: 3.7
+      - env: TOXENV=pypy
+        python: "pypy"
     allow_failures:
-      - env: TOXENV=py38
+      - env: TOXENV=pypy
+        python: "pypy"
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install:
